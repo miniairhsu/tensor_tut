@@ -1,0 +1,6 @@
+/logs 
+/graphs
+/TensorBoard
+/venv
+/YOUR_LOG_LOCATION
+*.hdf5 
