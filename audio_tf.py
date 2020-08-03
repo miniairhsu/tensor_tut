@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     # build model with 3 layers: 2 -> 5 -> 1
     model = tf.keras.models.Sequential([
-      tf.keras.layers.Dense(5, input_dim=2, activation="sigmoid"),
+      tf.keras.layers.Dense(2, input_dim=2, activation="sigmoid", use_bias=False),
       tf.keras.layers.Dense(1, activation="sigmoid")
     ])
 
@@ -57,7 +57,9 @@ if __name__ == "__main__":
     predictions = model.predict(data)
 
     weights = model.get_weights();
-    print("weights {}".format(weights))
+    weights_arr = np.array(weights)
+    for i in range(weights_arr.size):
+        print("{} weights {}".format(i, weights_arr[i]))
     print("\nPredictions:")
     for d, p in zip(data, predictions):
         print("{} + {} = {}".format(d[0], d[1], p[0]))

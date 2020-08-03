@@ -4,3 +4,4 @@
 /venv
 /YOUR_LOG_LOCATION
 *.hdf5 
+*.idea/TensorFlor.iml
